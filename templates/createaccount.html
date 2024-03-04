@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/css/login/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/login/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	   <!-- Navbar -->
+	   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<!-- <a class="navbar-brand" href="#">Navbar</a> -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item">
+						<a class="nav-link" href="#">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Pricing</a>
+					</li> -->
+					<!-- <li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="/static/images/Mentorow-logo-02-1.png" alt="IMG">
+				</div>
+
+				<form method="post" action="/adduser/"  enctype="multipart/form-data"  class="login100-form validate-form">
+					{% csrf_token %}
+					<span class="login100-form-title">
+						Create Account
+					</span>
+					<div class="wrap-input100 validate-input" data-validate = "Valid user name required">
+						<input class="input100" type="text" name="Name" placeholder="Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Valid user name required">
+						<input class="input100" type="text" name="user_name" placeholder="User Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-users" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid Department is required">
+						
+						<select class="input100" name="Department">
+
+							<option value="" disabled selected>Select Department</option>
+							<option value="student">Student</option>
+							<option value="sales">Sales</option>
+							<option value="Tutor">Tutor</option>
+							<option value="Accountant">Accountant</option>
+
+							<!-- Add more options as needed -->
+						</select>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-building" aria-hidden="true"></i>
+						</span>
+					</div><div class="wrap-input100 validate-input" data-validate = "Valid Phone is required">
+						<input class="input100" type="text" name="Phone" placeholder="Phone">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+						</span>
+					</div><div class="wrap-input100 validate-input" data-validate = "Valid Address is required">
+						<input class="input100" type="text" name="Address" placeholder="Address">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Create Account
+						</button>
+					</div>
+
+					<!-- <div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div> -->
+
+					<!-- <div class="text-center p-t-136">
+						<a class="txt2" href="/index/">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div> -->
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
+
